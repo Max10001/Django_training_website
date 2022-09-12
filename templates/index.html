@@ -5,8 +5,28 @@
     <title>Title</title>
 </head>
 <body>
-<h1>New page </h1>
-{{a}}
-<h1>{{text}}</h1>
+
+{% if object_list %}
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
+{% for obj in object_list %}
+     <tr>
+        <th>{{ obj.id }}</th>
+        <th>{{ obj.order_dt }}</th>
+        <th>{{ obj.order_name }}</th>
+        <th>{{ obj.order_phone }}</th>
+     </tr>
+{% endfor %}
+
+</table>
+{% else %}
+Not dannie
+{% endif %}
+
 </body>
 </html>
